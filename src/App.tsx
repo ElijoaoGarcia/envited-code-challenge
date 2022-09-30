@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import CreateEvent from './pages/CreateEvent'
+import Event from './pages/Event'
+import NotFound from './pages/NotFound'
+import Container from './components/Container'
+import { Provider } from 'react-redux'
+import { store } from './store/app'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type AppRoute = {
+  name: string;
+  path: string;
+  component: JSX.Element;
+};
+
+const routes: AppRoute[] = [
+  { name: 'index', path: '/', component: <Home /> },
+  { name: 'createEvent', path: '/create', component: <CreateEvent /> },
+  { name: 'event', path: '/event', component: <Event /> },
+  { name: 'notFound', path: '/404', component: <NotFound /> }
+]
+
+const renderRoutes = () => {
+  return routes.map(({ name, path, component }) => (
+    <Route
+      key={name}
+      path={path}
+      element={component}
+    />
+  ))
 }
 
-export default App;
+function App () {
+  return (
+    <Provider store={store}>
+      <Container>
+        <BrowserRouter>
+          <Routes>
+            {renderRoutes()}
+          </Routes>
+        </BrowserRouter>
+      </Container>
+    </Provider>
+  )
+}
+
+export default App

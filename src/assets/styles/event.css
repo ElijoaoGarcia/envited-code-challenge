@@ -1,0 +1,131 @@
+.container {
+    position: relative;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.event-content img {
+    width: 100%;
+}
+
+.event-content .content {
+    padding: 10px 30px !important;
+    margin: 0;
+}
+
+.event-content .content h2 {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    color: #240D57;
+    margin: 0;
+}
+
+.event-content .content p {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+    margin: 8px 0;
+    padding: 0;
+    color: #828282;
+}
+
+.event-content .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    top: -10px;
+    margin-top: 10px;
+    max-width: 375px;
+}
+
+.event-content .item .icon {
+    display: flex;
+    height: 48px;
+    width: 48px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: #8456EC;
+    background-color: #fff;
+    font-size: 24px;
+    box-shadow: 0px 0px 5px 0px #0000001A;
+}
+
+.event-content .item .iconEnd {
+    display: flex;
+    height: 48px;
+    width: 48px;
+    align-items: center;
+}
+
+.event-content .item .item-title {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #240D57;
+}
+
+.event-content .item .item-content {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4F4F4F;
+}
+
+.event-content .item .info {
+    flex: 1;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+@media only screen and (min-width: 1024px) {}
+@media only screen and (min-width: 800px) {
+    .event-content .content h2 {
+        font-size: 48px;
+    }
+    
+    .event-content .content p {
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 450px) {
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 20px !important;
+    }
+    .event-content{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .event-content img {
+        width: 375px;
+        height: 375px;
+        margin: 0 auto;
+    }
+    .event-content .item {
+        margin: 0 auto;
+    }
+    .event-content .content h2 {
+        margin: 10px auto;
+        max-width: 375px;
+    }
+    
+    .event-content .content p {
+        margin: 10px auto;
+        max-width: 375px;
+    }
+}
